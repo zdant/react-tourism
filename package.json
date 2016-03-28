@@ -19,5 +19,13 @@
   "bugs": {
     "url": "https://github.com/zdant/react-tourism/issues"
   },
-  "homepage": "https://github.com/zdant/react-tourism#readme"
+  "homepage": "https://github.com/zdant/react-tourism#readme",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "react": "^0.14.7",
+    "react-dom": "^0.14.7",
+    "react-redux": "^4.4.1",
+    "redux": "^3.3.1",
+    "webpack": "^1.12.14"
+  }
 }
