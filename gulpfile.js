@@ -29,7 +29,39 @@ var PATH = {
     }
 };
 
-//
-// gulp.task('html',function () {
-//     gulp.src(PATH.src.html);
-// });
+gulp.task('html', function () {
+    gulp.src(PATH.src.html)
+        .pipe(gulp.dest(PATH.release.html));
+});
+
+gulp.task('css', function () {
+    gulp.src(PATH.src.css)
+        .pipe(gulp.dest(PATH.release.css));
+});
+
+gulp.task('typescript', function (done) {
+
+    gulp.src(PATH.src.tsx)
+        .pipe(typescript(typescriptConfig))
+        .pipe(gulp.dest(PATH.build.tsx))
+        .on('end', function () {
+            done();
+        })
+
+});
+
+gulp.task('webpack', ['typescript'], function (done) {
+
+    var mConfig = Object.create(webpackConfig);
+    webpack(mConfig, function () {
+        done();
+    });
+});
+
+gulp.task('del-build', ['webpack'], function () {
+    del('build');
+});
+
+gulp.task('build-js', ['typescript', 'webpack', 'del-build']);
+
+gulp.task('default', ['html', 'css', 'build-js']);
