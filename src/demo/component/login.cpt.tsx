@@ -37,6 +37,6 @@ class LoginCpt extends React.Component<any,any> {
 
 function mapStateToProps(state) {
     return {
-        
-    }
+
+    };
 }
