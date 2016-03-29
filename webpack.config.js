@@ -17,6 +17,7 @@ module.exports = {
             {test: /\.js$/, loader: 'jsx-loader?harmony'}
         ]
     },
+    // plugins  : [],
     externals: {
         'react'       : 'React',
         'redux'       : 'Redux',

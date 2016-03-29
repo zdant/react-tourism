@@ -16,9 +16,9 @@ var webpackConfig    = require('./webpack.config.js');
 var PATH = {
 
     src    : {
-        html: 'src/*.html',
-        css : 'src/*.css',
-        tsx : 'src/*.tsx'
+        html: 'src/**/*.html',
+        css : 'src/**/*.css',
+        tsx : 'src/**/*.tsx'
     },
     build  : {
         tsx: 'build'
