@@ -37,7 +37,7 @@ class UserTableRowCpt extends React.Component<any,any> {
                 <td className="text-center" ref="username">{username}</td>
                 <td className="text-center" ref="age">{age}</td>
                 <td className="text-center">
-                    <button onClick={this.openUserForm}>Edit</button>
+                    <button className="btn btn-primary" onClick={this.openUserForm}>Edit</button>
                 </td>
             </tr>
         )

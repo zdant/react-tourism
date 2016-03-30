@@ -6,8 +6,10 @@ import { combineReducers } from 'redux';
 
 import login from './login.rd';
 import manager from './manager.rd';
+import slideMenu from './slidemenu.rd';
 
 export default combineReducers({
     login,
-    manager
+    manager,
+    slideMenu
 });

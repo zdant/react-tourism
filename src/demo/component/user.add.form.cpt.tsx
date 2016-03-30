@@ -34,7 +34,7 @@ class UserAddFormCpt extends React.Component<any,any> {
         const {route} = this.props;
         return (
             <div className="add-container">
-                <form className="form-horizontal">
+                <div className="form-horizontal">
                     <div className="form-group">
                         <label htmlFor="name" className="col-md-4">Name</label>
                         <input id="name" ref="username" type="text" className="col-md-8" placeholder="input your name here"
@@ -45,11 +45,11 @@ class UserAddFormCpt extends React.Component<any,any> {
                         <input id="age" ref="age" type="number" className="col-md-8" placeholder="input your age here"
                                defaultValue={this.state.age}/>
                     </div>
-                    <button className="btn btn-success block"
+                    <button className="btn btn-success"
                             onClick={route.path === '/newUser' ? this.addUser : this.modifyUser}>
                         save
                     </button>
-                </form>
+                </div>
             </div>
         )
     }

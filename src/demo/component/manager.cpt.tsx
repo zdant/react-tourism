@@ -20,10 +20,13 @@ class ManagerCpt extends React.Component<any,any> {
     render() {
         const {users, modifyUserProperty, deleteUser, openUserFormAction} = this.props;
         return (
-            <div className="manager-table">
-                <ToolBarCpt deleteUser={deleteUser}/>
-                <UserTableCpt users={users} modifyUserProperty={modifyUserProperty} openUserFormAction={openUserFormAction} />
+            <div>
+                <div className="manager-table">
+                    <ToolBarCpt deleteUser={deleteUser}/>
+                    <UserTableCpt users={users} modifyUserProperty={modifyUserProperty} openUserFormAction={openUserFormAction} />
+                </div>
             </div>
+            
         );
     }
 }
