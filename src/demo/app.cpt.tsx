@@ -8,7 +8,7 @@ import { compose, combineReducers, applyMiddleware, createStore } from 'redux';
 import thunk from 'redux-thunk';
 import createLogger = require("redux-logger");
 import reducer from './reducers';
-// import LoginCpt from './component/login.cpt';
+import LoginCpt from './component/login.cpt';
 
 const logger = createLogger();
 const store = createStore(combineReducers({reducer,routing: routerReducer}), compose(
@@ -17,3 +17,16 @@ const store = createStore(combineReducers({reducer,routing: routerReducer}), com
 ));
 const history = syncHistoryWithStore(hashHistory, store);
 
+class AppCpt extends React.Component<any,any> {
+    render() {
+        return (
+            <Provider>
+                <Router history={history}>
+                    <Route path="/" component={LoginCpt}/>
+                </Router>
+            </Provider>
+        )
+    }
+}
+
+export default AppCpt;

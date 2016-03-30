@@ -37,6 +37,14 @@ class LoginCpt extends React.Component<any,any> {
 
 function mapStateToProps(state) {
     return {
-
+        result: state.reducer.login.rsp,
+        isFetching: state.reducer.login.isFetching
     };
 }
+
+function mapDispatchToProps(dispatch) {
+    return bindActionCreators({fetchPosts}, dispatch);
+}
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(LoginCpt);
