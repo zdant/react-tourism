@@ -7,7 +7,6 @@ require('../sass/manager.all.sass');
 class ManagerAllCpt extends React.Component<any,any> {
     
     render() {
-
         return (
             
             <div>
@@ -21,5 +20,4 @@ class ManagerAllCpt extends React.Component<any,any> {
         )
     }
 }
-
 export default ManagerAllCpt;
