@@ -6,25 +6,25 @@ import UserTableRowCpt from './user.table.row.cpt'
 class UserTableCpt extends React.Component<any,any> {
     render() {
 
-        const {user, modifyUserProperty, openUserFormAction} = this.props;
+        const {users, modifyUserProperty, openUserFormAction} = this.props;
         var rows = [];
 
-        user.forEach(function (user, index) {
-            user['req'] = index;
+        users.forEach(function (user, index) {
+            user['seq'] = index;
             rows.push(<UserTableRowCpt {...user} key={user.username} modifyUserProperty={modifyUserProperty}
                                                  openUserFormAction={openUserFormAction}/>)
         });
 
         return (
 
-            <table>
+            <table className="table table-bordered table-striped">
                 <thead>
                 <tr>
-                    <th></th>
-                    <th>seq</th>
-                    <th>username</th>
-                    <th>age</th>
-                    <th>edit</th>
+                    <th className="text-center">check</th>
+                    <th className="text-center">seq</th>
+                    <th className="text-center">username</th>
+                    <th className="text-center">age</th>
+                    <th className="text-center">edit</th>
                 </tr>
                 </thead>
                 <tbody>

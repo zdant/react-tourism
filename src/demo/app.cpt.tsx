@@ -7,8 +7,12 @@ import { Provider } from 'react-redux';
 import { compose, combineReducers, applyMiddleware, createStore } from 'redux';
 import thunk from 'redux-thunk';
 import createLogger = require("redux-logger");
+
+
 import reducer from './reducers';
 import LoginCpt from './component/login.cpt';
+import ManagerComponent from './component/manager.cpt';
+import UserFormComponent from './component/user.add.form.cpt';
 
 const logger = createLogger();
 const store = createStore(combineReducers({reducer,routing: routerReducer}), compose(
@@ -20,9 +24,12 @@ const history = syncHistoryWithStore(hashHistory, store);
 class AppCpt extends React.Component<any,any> {
     render() {
         return (
-            <Provider>
+            <Provider store={store}>
                 <Router history={history}>
                     <Route path="/" component={LoginCpt}/>
+                    <Route path="/manager" component={ManagerComponent} />
+                    <Route path="/newUser" component={UserFormComponent} />
+                    <Route path="/modifyUser/:username/:age/:seq" component={UserFormComponent} />
                 </Router>
             </Provider>
         )

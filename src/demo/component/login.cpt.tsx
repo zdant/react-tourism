@@ -10,20 +10,23 @@ import {fetchPosts} from '../actions/login.ac'
 class LoginCpt extends React.Component<any,any> {
     render() {
         return (
-            <div>
-                <h2>LOGIN</h2>
-                <label>
-                    <span>UserName:</span>
-                    <input type="text" ref="username" placeholder="input your name..."/>
-                </label>
-                <label>
-                    <span>PassWord:</span>
-                    <input type="password" ref="password" placeholder="input your password..."/>
-                </label>
+            <div className="login-container">
                 <div>
-                    <button className="login-btn" onClick={this.onLoginClick}>Login</button>
+                    <h2>LOGIN</h2>
+                    <label className="login-input-item">
+                        <span className="item-label">UserName:</span>
+                        <input type="text" ref="username" placeholder="input your name..." autoFocus="autofocus" />
+                    </label>
+                    <label className="login-input-item">
+                        <span className="item-label">PassWord:</span>
+                        <input type="password" ref="password" placeholder="input your password..."/>
+                    </label>
+                    <div>
+                        <button className="login-btn btn btn-primary" onClick={this.onLoginClick}>Login</button>
+                    </div>
                 </div>
             </div>
+            
         );
     }
     

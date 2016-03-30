@@ -30,13 +30,13 @@ class UserTableRowCpt extends React.Component<any,any> {
         
         return (
             <tr>
-                <td>
+                <td className="text-center">
                     <input type="checkbox" onClick={this.selected} ref="checkbox" />
                 </td>
-                <td ref="seq">{seq}</td>
-                <td ref="username">{username}</td>
-                <td ref="age">{age}</td>
-                <td>
+                <td className="text-center" ref="seq">{seq}</td>
+                <td className="text-center" ref="username">{username}</td>
+                <td className="text-center" ref="age">{age}</td>
+                <td className="text-center">
                     <button onClick={this.openUserForm}>Edit</button>
                 </td>
             </tr>

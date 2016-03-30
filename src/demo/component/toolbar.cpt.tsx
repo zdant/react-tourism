@@ -9,9 +9,9 @@ class ToolCarCpt extends React.Component<any,any> {
     render() {
         const {deleteUser} = this.props;
         return (
-            <div>
-                <button><Link to="/newUser">new</Link></button>
-                <button onClick={deleteUser}>delete the users selected</button>
+            <div className="toolbar">
+                <Link className="route-link btn btn-default" to="/newUser">new</Link>
+                <button className="btn btn-danger toolbar-other-item" onClick={deleteUser}>delete the users selected</button>
             </div>
         )
     }

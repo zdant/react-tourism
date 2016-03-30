@@ -32,10 +32,10 @@ const requestGet = () => {
     }
 };
 
-const receiveGet = (user) => {
+const receiveGet = (users) => {
     return {
         type: RECEIVE_GET,
-        user
+        users
     }
 };
 
@@ -43,7 +43,7 @@ const fetchGet = () => {
     return dispatch => {
         dispatch(requestGet());
 
-        return fetch('./server')
+        return fetch('./server/users.json')
             .then(rsp => rsp.json())
             .then(json => dispatch(receiveGet(json)))
     }
@@ -80,6 +80,12 @@ export const modifyUserProperty = (index, checked) => {
       index,
       checked
   }  
+};
+
+export const openUserFormAction = (username, age, seq) => {
+    return dispatch => {
+        dispatch(push('/modifyUser/'+username+'/'+age +'/'+seq));
+    }
 };
 
 export const modifyUserPropertyAction = (username,age,seq) => {
